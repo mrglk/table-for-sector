@@ -1,0 +1,44 @@
+.Table__headData {
+    /* display: flex;
+      align-items: center; */
+    text-align: center;
+    width: 25%;
+    height: 45px;
+    padding: 0 5px;
+    font-weight: 600;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    /* padding-left: 30%; */
+  }
+  
+  .Table__headData:first-child {
+    width: 9%;
+    /* padding-left: 23px; */
+  }
+
+  .Table__headData:nth-child(2) {
+    width: 49%;
+  }
+
+  .Table__headData:last-child {
+    width: 42%;
+  }
+  
+  .Table__headButton {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 25px;
+    transition: transform 0.2s ease;
+  }
+  
+  .Table__headButton svg {
+    width: 12px;
+    height: 6px;
+  }
+  
+  .Table__headButton--active {
+      transform: rotate(-180deg);
+      border: black;
+  }

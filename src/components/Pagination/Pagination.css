@@ -1,0 +1,30 @@
+
+.Pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 30px 12px 30px;
+}
+
+
+.Pagination__navButton {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Pagination__navButton:disabled {
+  color: rgba(16, 16, 16, 1);
+}
+.Pagination__numbers {
+  display: flex;
+}
+
+.Pagination__numberButton{
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  }
+.Pagination__numberButton--active {
+    color: #7EBC3C;
+  }

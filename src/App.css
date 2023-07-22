@@ -1,0 +1,56 @@
+/* #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+
+.App {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #474955;
+  min-height: 100vh;
+}
+
+.App__row {
+  display: flex;
+  justify-content: center;
+  max-width: 1232px;
+  width: 100%;
+  padding: 0 80px;
+    min-height: 100vh;
+}
+
+.App__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* min-height: 100%; */
+  max-width: 1077px;
+}
+
+.App__table {
+  flex: 1 1 auto;
+}
+
+.App__bottom {
+  /* flex: 1 0 auto; */
+}
+
+.App__search {
+  margin-top: 23px;
+  margin-bottom: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}

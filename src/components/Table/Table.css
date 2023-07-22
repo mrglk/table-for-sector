@@ -1,0 +1,24 @@
+.Table {
+  /* max-width: 700px; */
+  /* display: table; */
+  /* display: grid;
+  grid-template-rows: 1fr 10fr; */
+  /* grid-template-columns: 1fr 5fr 5fr; */
+  width: 100%;
+  min-height: 669px;
+  max-height: 669px;
+  border-collapse: collapse;
+}
+
+.Table__headRow {
+  background-color: #474955;
+}
+
+/* .Table__body {
+} */
+
+@media screen and (max-width: 600px) {
+  .Table {
+    font-size: 14px;
+  }
+}
