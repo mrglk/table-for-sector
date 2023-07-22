@@ -1,7 +1,5 @@
-import { memo } from "react";
 import "./TableCell.css";
 
-
-export const TableCell = memo(({data}) => {
-  return <td className="cell">{data}</td>;
-})
+export function TableCell({ data }) {
+  return <td className="TableCell">{data}</td>;
+}

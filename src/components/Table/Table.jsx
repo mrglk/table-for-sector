@@ -1,7 +1,5 @@
 import "./Table.css";
 import { TableRow } from "../TableRow/TableRow";
-import { ReactComponent as Arrow } from "../../assets/svg/arrow.svg";
-import * as cx from "classnames";
 import { TableHeadCell } from "../TableHeadData/TableHeadCell";
 
 const headData = [

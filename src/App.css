@@ -1,14 +1,6 @@
-/* #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-} */
+  margin: 0;
+}
 
 .App {
   display: flex;
@@ -40,9 +32,9 @@ body {
   flex: 1 1 auto;
 }
 
-.App__bottom {
-  /* flex: 1 0 auto; */
-}
+/* .App__bottom {
+  flex: 1 0 auto;
+} */
 
 .App__search {
   margin-top: 23px;
@@ -53,4 +45,16 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
+}
+
+@media screen and (max-width: 950px) {
+  .App__row {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App__row {
+    padding: 0 20px;
+  }
 }

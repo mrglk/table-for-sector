@@ -1,9 +1,8 @@
-import { memo } from "react";
 import "./TableHeadCell.css";
 import { ReactComponent as Arrow } from "../../assets/svg/arrow.svg";
 import * as cx from "classnames";
 
-export const TableHeadCell = memo(({ title, onClick, isDescending }) => {
+export function TableHeadCell({ title, onClick, isDescending }) {
   return (
     <th className="Table__headData">
       {title}
@@ -17,4 +16,4 @@ export const TableHeadCell = memo(({ title, onClick, isDescending }) => {
       </button>
     </th>
   );
-});
+};

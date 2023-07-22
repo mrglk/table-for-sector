@@ -1,16 +1,14 @@
-
 .Pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 16px 30px 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 30px 12px 30px;
 }
-
 
 .Pagination__navButton {
   font-size: 24px;
   font-weight: 500;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .Pagination__navButton:disabled {
@@ -20,11 +18,31 @@
   display: flex;
 }
 
-.Pagination__numberButton{
+.Pagination__numberButton {
   font-size: 18px;
   font-style: italic;
   font-weight: 700;
-  }
+}
 .Pagination__numberButton--active {
-    color: #7EBC3C;
+  color: #7ebc3c;
+}
+
+@media screen and (max-width: 950px) {
+  .Pagination__navButton {
+    font-size: 22px;
   }
+
+  .Pagination__numberButton {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Pagination__navButton {
+    font-size: 18px;
+  }
+
+  .Pagination__numberButton {
+    font-size: 14px;
+  }
+}

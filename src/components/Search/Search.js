@@ -2,10 +2,10 @@ import "./Search.css";
 import { ReactComponent as SearchIcon } from "../../assets/svg/search.svg";
 import { useRef } from "react";
 
-export function Search({ onSubmit, value, onChange }) {
+export function Search({ value, onChange }) {
 const $inputRef = useRef(null);
   return (
-    <form className="Search" onSubmit={onSubmit}>
+    <div className="Search">
       <input
       ref={$inputRef}
         className="Search__input"
@@ -18,6 +18,6 @@ const $inputRef = useRef(null);
       <button className="Search__button" onClick={() => $inputRef.current.focus()}>
         <SearchIcon />
       </button>
-    </form>
+    </div>
   );
 }
