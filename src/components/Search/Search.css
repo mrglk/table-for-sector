@@ -3,18 +3,18 @@
   align-items: center;
   width: 100%;
   max-width: 631px;
-  background-color: #5A5C66;
+  background-color: #5a5c66;
 }
 
 .Search__input {
   appearance: none;
   -webkit-appearance: none;
   -webkit-text-fill-color: #ffffff;
-  box-shadow: 0 0 0px 1000px #5A5C66 inset;
-  -webkit-box-shadow: 0 0 0px 1000px var #5A5C66 inset;
+  box-shadow: 0 0 0px 1000px #5a5c66 inset;
+  -webkit-box-shadow: 0 0 0px 1000px #5a5c66 inset;
 
   width: 100%;
-  background-color: #5A5C66;
+  background-color: #5a5c66;
   color: #ffffff;
   padding: 18px 26px;
   font-size: 14px;

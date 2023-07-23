@@ -1,14 +1,13 @@
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #474955;
 }
 
 .App {
   display: flex;
   justify-content: center;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
-  color: #474955;
-  min-height: 100vh;
 }
 
 .App__row {
@@ -17,24 +16,19 @@ body {
   max-width: 1232px;
   width: 100%;
   padding: 0 80px;
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .App__content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* min-height: 100%; */
   max-width: 1077px;
 }
 
 .App__table {
   flex: 1 1 auto;
 }
-
-/* .App__bottom {
-  flex: 1 0 auto;
-} */
 
 .App__search {
   margin-top: 23px;

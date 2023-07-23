@@ -17,8 +17,7 @@ const headData = [
   },
 ];
 
-export function Table({ data, handleSort, sortConfig }) {
-
+export function Table({ data, handleSort }) {
   return (
     <table className="Table">
       <thead>
@@ -28,10 +27,6 @@ export function Table({ data, handleSort, sortConfig }) {
               key={label}
               title={title}
               label={label}
-              isDescending={
-                sortConfig.key === label &&
-                sortConfig.direction === "descending"
-              }
               onClick={() => handleSort(label)}
             />
           ))}

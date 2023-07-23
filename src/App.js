@@ -13,7 +13,6 @@ function App() {
   const dispatch = useDispatch();
   const data = useSelector(({ data }) => data);
   const searchParams = new URLSearchParams(window.location.search);
-
   const [filtredData, setFiltredData] = useState([]);
   const [page, setPage] = useState(parseInt(searchParams.get("page")) || 1);
   const [totalPages, setTotalPages] = useState(0);
@@ -71,8 +70,11 @@ function App() {
     if (!target) return setFiltredData(data);
 
     setPage(1);
-    const resultsPosts = data.filter(
-      (cell) => [cell["title"], cell["body"], cell["id"].toString()].some(item => item.includes(target)));
+    const resultsPosts = data.filter((cell) =>
+      [cell["title"], cell["body"], cell["id"].toString()].some((item) =>
+        item.includes(target)
+      )
+    );
 
     setFiltredData(resultsPosts);
   };
@@ -92,7 +94,6 @@ function App() {
             <Table
               data={filtredData.slice(firstIndex, lastIndex)}
               handleSort={handleSort}
-              sortConfig={sortConfig}
             />
           </div>
           <div className="App__bottom">

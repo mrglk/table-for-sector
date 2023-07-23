@@ -37,6 +37,13 @@
   }
 }
 
+@media screen and (max-width: 530px) {
+  .Pagination {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .Pagination__navButton {
     font-size: 18px;
