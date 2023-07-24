@@ -40,8 +40,7 @@ function App() {
   }, [filtredData]);
 
   const handleSort = (key) => {
-    const direction =
-      sortConfig.key === key && sortConfig.direction === "ASC" ? "DESC" : "ASC";
+    const direction = sortConfig.key === key && sortConfig.direction === "ASC" ? "DESC" : "ASC";
 
     const sortedData = [...data].sort((a, b) => {
       if (key === "id") {
@@ -77,15 +76,7 @@ function App() {
           <div className="App__table">
             <Routes>
               <Route exact path="/" element={<Navigate to="/1" />} />
-              <Route
-                path="/:pageNum"
-                element={
-                  <Table
-                    data={filtredData.slice(firstIndex, lastIndex)}
-                    handleSort={handleSort}
-                  />
-                }
-              />
+              <Route path="/:pageNum" element={<Table data={filtredData.slice(firstIndex, lastIndex)} handleSort={handleSort} />} />
             </Routes>
           </div>
           <div className="App__bottom">

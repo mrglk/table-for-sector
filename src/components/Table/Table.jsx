@@ -23,12 +23,7 @@ export function Table({ data, handleSort }) {
       <thead>
         <tr className="Table__headRow">
           {headData.map(({ title, label }) => (
-            <TableHeadCell
-              key={label}
-              title={title}
-              label={label}
-              onClick={() => handleSort(label)}
-            />
+            <TableHeadCell key={label} title={title} label={label} onClick={() => handleSort(label)} />
           ))}
         </tr>
       </thead>
