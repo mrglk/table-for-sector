@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import { Table } from "./components/Table/Table";
 import { getPagesCount } from "./utils/helpers";
@@ -6,19 +5,22 @@ import { Pagination } from "./components/Pagination/Pagination";
 import { Search } from "./components/Search/Search";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData } from "./stores/store";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const ROWS_PER_PAGE = 10;
 
 function App() {
   const dispatch = useDispatch();
+  const location = useLocation();
   const data = useSelector(({ data }) => data);
-  const searchParams = new URLSearchParams(window.location.search);
   const [filtredData, setFiltredData] = useState([]);
-  const [page, setPage] = useState(parseInt(searchParams.get("page")) || 1);
+
+  const [page, setPage] = useState(+location.pathname.split("/")[1] || 1);
   const [totalPages, setTotalPages] = useState(0);
   const [sortConfig, setSortConfig] = useState({
     key: "id",
-    direction: "ascending",
+    direction: "ASC",
   });
   const [searchValue, setSearchValue] = useState("");
 
@@ -37,25 +39,15 @@ function App() {
     setTotalPages(getPagesCount(filtredData.length, ROWS_PER_PAGE));
   }, [filtredData]);
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams();
-    searchParams.set("page", page);
-    window.history.pushState(null, null, `?${searchParams.toString()}`);
-  }, [page]);
-
   const handleSort = (key) => {
-    let direction = "ascending";
-    if (sortConfig.key === key && sortConfig.direction === "ascending") {
-      direction = "descending";
-    }
+    const direction =
+      sortConfig.key === key && sortConfig.direction === "ASC" ? "DESC" : "ASC";
 
     const sortedData = [...data].sort((a, b) => {
       if (key === "id") {
-        return direction === "ascending" ? a[key] - b[key] : b[key] - a[key];
+        return direction === "ASC" ? a[key] - b[key] : b[key] - a[key];
       } else {
-        return direction === "ascending"
-          ? a[key].localeCompare(b[key])
-          : b[key].localeCompare(a[key]);
+        return direction === "ASC" ? a[key].localeCompare(b[key]) : b[key].localeCompare(a[key]);
       }
     });
 
@@ -63,25 +55,17 @@ function App() {
     setSortConfig({ key, direction });
   };
 
-  const handleSearch = (e) => {
-    const target = e.target.value;
-    setSearchValue(target);
+  const handleSearch = (query) => {
+    setSearchValue(query);
 
-    if (!target) return setFiltredData(data);
+    if (!query) {
+      return setFiltredData(data);
+    }
 
     setPage(1);
-    const resultsPosts = data.filter((cell) =>
-      [cell["title"], cell["body"], cell["id"].toString()].some((item) =>
-        item.includes(target)
-      )
-    );
-
+    const resultsPosts = data.filter(({ userId, ...rowData }) => Object.values(rowData).join(" ").includes(query));
     setFiltredData(resultsPosts);
   };
-
-  if (data.length === 0) {
-    return;
-  }
 
   return (
     <div className="App">
@@ -91,10 +75,18 @@ function App() {
             <Search value={searchValue} onChange={handleSearch} />
           </div>
           <div className="App__table">
-            <Table
-              data={filtredData.slice(firstIndex, lastIndex)}
-              handleSort={handleSort}
-            />
+            <Routes>
+              <Route exact path="/" element={<Navigate to="/1" />} />
+              <Route
+                path="/:pageNum"
+                element={
+                  <Table
+                    data={filtredData.slice(firstIndex, lastIndex)}
+                    handleSort={handleSort}
+                  />
+                }
+              />
+            </Routes>
           </div>
           <div className="App__bottom">
             <Pagination setPage={setPage} page={page} totalPages={totalPages} />

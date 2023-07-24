@@ -9,19 +9,25 @@
   font-size: 24px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
+  color: #474955;
+  text-decoration: none;
 }
 
-.Pagination__navButton:disabled {
-  color: rgba(16, 16, 16, 1);
+.Pagination__navButton--disabled {
+  pointer-events: none;
 }
+
 .Pagination__numbers {
   display: flex;
+  gap: 10px;
 }
 
 .Pagination__numberButton {
   font-size: 18px;
   font-style: italic;
   font-weight: 700;
+  color: #474955;
+  text-decoration: none;
 }
 .Pagination__numberButton--active {
   color: #7ebc3c;
@@ -41,6 +47,10 @@
   .Pagination {
     flex-direction: column;
     gap: 5px;
+  }
+
+  .Pagination__numbers {
+    justify-content: center;
   }
 }
 
